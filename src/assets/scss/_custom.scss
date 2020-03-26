@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #243b55;
+  overflow-x: hidden;
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+//App Header Title
+.main-title {
+  font-weight: 200;
+  letter-spacing: 5px;
+}
+
+//New Todo Element
+.add-todo {
+  .add-todo-input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.6);
+    height: 40px;
+    color: #fff;
+    font-size: 1.5em;
+    padding-right: 36px;
+    width: 100%;
+
+    &::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+    &:-moz-placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+    &::-moz-placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+    &:-ms-input-placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  .add-todo-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding: 0.1rem 1rem;
+  }
+}
+
+//Todos list
+.todos {
+  .todos-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  li {
+    margin-top: 12px;
+
+    .todo-card {
+      padding: 20px 28px 20px 80px;
+      background: #ffffff;
+      font-size: 1.1rem;
+      margin: 12px 0;
+      border-radius: 3px;
+      word-wrap: break-word;
+      position: relative;
+      border-left: 10px solid;
+      border-color: $secondary;
+      transition: border-color 0.1s ease-in-out;
+
+      &.completed {
+        border-color: $success;
+      }
+
+      &.deleted {
+        background: red;
+      }
+
+      .complete-btn {
+        position: absolute;
+        left: 12px;
+        top: 0;
+        width: 50px;
+        height: 100%;
+
+        .square {
+          border: 1px solid rgba(0, 0, 0, 0.3);
+          border-radius: 3px;
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          cursor: pointer;
+
+          &.completed {
+            border: 1px solid $success;
+          }
+
+          .icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: transparent;
+            -webkit-transition: color 0.2s ease-in-out;
+            -moz-transition: color 0.2s ease-in-out;
+            transition: color 0.2s ease-in-out;
+
+            &.completed {
+              color: $success;
+            }
+
+            &:hover {
+              color: rgba(0, 0, 0, 0.3);
+            }
+          }
+        }
+      }
+
+      .text {
+        color: #333;
+        font-weight: 400;
+
+        &.completed {
+          text-decoration: line-through;
+          color: rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      .edit {
+        input {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .destroy-btn,
+      .edit-cancel-btn {
+        position: absolute;
+        bottom: 7px;
+        right: 5px;
+
+        .icon {
+          color: rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+
+          &:hover {
+            color: $danger;
+          }
+        }
+      }
+
+      .edit-btn,
+      .edit-accept-btn {
+        position: absolute;
+        top: 7px;
+        right: 5px;
+
+        .icon {
+          color: rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+
+          &:hover {
+            color: $info;
+          }
+        }
+      }
+    }
+  }
+}
