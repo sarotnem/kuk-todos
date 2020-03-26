@@ -13,7 +13,7 @@
       </b-row>
       <b-row class="mt-3">
         <b-col>
-          <div class="controls text-center">
+          <div class="controls text-center" v-if="todos.length > 0 ">
             <b-button variant="success" size="sm" class="mx-3" @click="markAllTodosCompleted">Mark All Completed</b-button>
             <b-button variant="warning" size="sm" class="mx-3" @click="deleteAllTodos">Delete All</b-button>
           </div>
